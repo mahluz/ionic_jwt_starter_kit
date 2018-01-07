@@ -37,7 +37,7 @@ export class AuthServiceProvider {
 		console.log(credentials);
 		return Observable.create(observer=>{
 			// let access = (credentials.password==='pass' && credentials.email==='email');
-			this.http.post("http://localhost:8000/api/auth/login",credentials).subscribe(result=>{
+			this.http.post("http://localhost/uc/api/auth/login",credentials).subscribe(result=>{
 				console.log(result);
 				if(result['response'] == 'success'){
 					this.storage.set('token',result['result']['token']);
@@ -60,7 +60,7 @@ export class AuthServiceProvider {
 		this.storage.get('token').then((data)=>{
 			let access = {token:data};
 
-			this.http.post('http://localhost:8000/api/user',access).subscribe(data=>{
+			this.http.post('http://localhost/uc/api/user',access).subscribe(data=>{
 			  // console.log(data);
 			  return data;
 			});
@@ -75,18 +75,6 @@ export class AuthServiceProvider {
 			observer.next(true);
 			observer.complete();
 		});
-	}
-
-	public showError(text){
-		this.loading.dismiss();
-
-		let alert = this.alertCtrl.create({
-		  title:'Fail',
-		  subTitle:text,
-		  buttons:['OK']
-		});
-
-		alert.present();
 	}
 
 

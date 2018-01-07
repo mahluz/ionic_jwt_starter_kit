@@ -101,7 +101,7 @@ export class SettingsPage {
       if(allowed){
         this.navCtrl.push('TutorialPage');
       } else {
-        this.auth.showError("cant logout");
+        console.log('cant logout');
       }
     });
   }

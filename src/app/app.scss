@@ -1,5 +1,23 @@
 // http://ionicframework.com/docs/v2/theming/
+p{
+	color:grey;
+}
 
+@font-face {
+  font-family: 'Humanst';
+  src: url('../assets/fonts/roboto-light.woff2') format('woff2'), url('../assets/fonts/roboto-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Humanst';
+  // font-size:1.5rem;
+}
+// body {
+// font-family: 'Helvetica Neue';
+// font-size: 1.0em;
+// }
 
 // App Global Sass
 // --------------------------------------------------

@@ -11,6 +11,7 @@ import { Items } from '../../providers/providers';
 })
 export class ListMasterPage {
   currentItems: Item[];
+  order = [];
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
     this.currentItems = this.items.query();
@@ -51,4 +52,9 @@ export class ListMasterPage {
       item: item
     });
   }
+
+  customerName(){
+    this.navCtrl.push('MenuPage');
+  }
+
 }

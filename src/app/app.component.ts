@@ -54,7 +54,7 @@ export class MyApp {
         if(data == null){
           this.rootPage = FirstRunPage;
         } else {
-          this.http.post('http://localhost:8000/api/auth/login',{token:data}).subscribe(data=>{
+          this.http.post('http://localhost/uc/api/user',{token:data}).subscribe(data=>{
             console.log(data);
             if(data["response"] != "error"){
               this.rootPage = MainPage;

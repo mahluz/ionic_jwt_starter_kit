@@ -26,9 +26,13 @@ export class MenuPage {
     console.log('Hello MenuPage Page');
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+  food(){
+    this.navCtrl.push('FoodPage');
+  }
+  drink(){
+    this.navCtrl.push('DrinkPage');
+  }
+  dessert(){
+    this.navCtrl.push('DessertPage');
   }
 }
