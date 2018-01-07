@@ -50,17 +50,20 @@ export class MyApp {
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen,public storage:Storage, public http:HttpClient) {
     platform.ready().then(() => {
       this.storage.get('token').then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data == null){
           this.rootPage = FirstRunPage;
         } else {
-          this.http.post('http://localhost/uc/api/user',{token:data}).subscribe(data=>{
+          this.http.post('http://arazwam.com/api/user',{token:data}).subscribe(data=>{
             console.log(data);
             if(data["response"] != "error"){
               this.rootPage = MainPage;
             } else {
               this.rootPage = LoginPage;
             }
+          },error=>{
+            console.log('error nih',error.message);
+            this.rootPage = LoginPage;
           });
         }
       });

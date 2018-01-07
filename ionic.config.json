@@ -1,6 +1,6 @@
 {
   "name": "Megatrix",
-  "app_id": "",
+  "app_id": "7a9d8d22",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthHttp, AuthConfig, JwtHelper } from 'angular2-jwt';
+// import { AuthHttp, AuthConfig, JwtHelper } from 'angular2-jwt';
 import { Storage } from '@ionic/storage';
 // import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -37,7 +37,7 @@ export class AuthServiceProvider {
 		console.log(credentials);
 		return Observable.create(observer=>{
 			// let access = (credentials.password==='pass' && credentials.email==='email');
-			this.http.post("http://localhost/uc/api/auth/login",credentials).subscribe(result=>{
+			this.http.post("http://arazwam.com/api/auth/login",credentials).subscribe(result=>{
 				console.log(result);
 				if(result['response'] == 'success'){
 					this.storage.set('token',result['result']['token']);
@@ -60,7 +60,7 @@ export class AuthServiceProvider {
 		this.storage.get('token').then((data)=>{
 			let access = {token:data};
 
-			this.http.post('http://localhost/uc/api/user',access).subscribe(data=>{
+			this.http.post('http://arazwam.com/api/user',access).subscribe(data=>{
 			  // console.log(data);
 			  return data;
 			});

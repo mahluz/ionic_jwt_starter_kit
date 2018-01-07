@@ -7,7 +7,7 @@ import { MainPage } from '../pages';
 
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
-import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
